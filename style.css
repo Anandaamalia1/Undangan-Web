@@ -1,0 +1,1245 @@
+:root {
+    --primary-color: #004080;
+    --secondary-color: #FFD700;
+    --background-color: #004080;
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --font-family-main: 'Playfair Display', serif;
+    --font-family-elegant: 'Playfair Display', serif;
+    --font-family-monospace: 'Roboto Mono', monospace;
+    --font-dancing-script: 'Dancing Script', cursive;
+    --font-great-vibes: 'Great Vibes', cursive;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    
+    /* Properti baru untuk mengatasi masalah di iPhone */
+    min-height: 100vh; /* Memastikan body mengisi seluruh tinggi viewport */
+    padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Base Styles */
+.card-section-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none; /* Ini yang menghilangkan garis bawah */
+    font-family: var(--font-family-main);
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #002d5a;
+    transform: translateY(-2px);
+}
+
+
+/* --- Styling Halaman Pembuka (index.html) --- */
+.opening-body {
+    background-color: var(--background-color);
+    color: var(--text-color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url('bg1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.opening-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+.opening-couple-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 400;
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+.header-left {
+    font-size: 1.1em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 3em;
+}
+.logo-text {
+    font-family: var(--font-family-main);
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--text-color-light);
+    margin-top: 0;
+    margin-right: 0;
+    position: relative;
+    z-index: 1;
+}
+.logo-accent-img {
+    position: absolute;
+    top: -5px;
+    left: 45px;
+    width: 65px;
+    height: auto;
+    z-index: 2;
+}
+.opening-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+.opening-invitation {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.opening-guest-name {
+    font-family: var(--font-family-elegant);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--text-color-light);
+    margin: 0 0 40px 0;
+    word-break: break-word;
+    max-width: 90%;
+}
+.open-button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+.open-button:hover {
+    background-color: #FFD700;
+    color: white;
+}
+.opening-footer {
+    width: 100%;
+    padding: 0 20px;
+    text-align: right;
+    max-width: 900px;
+}
+.initials {
+    font-family: var(--font-family-elegant);
+    font-size: 3em;
+    font-weight: normal;
+    color: var(--text-color-light);
+    margin: 0;
+    line-height: 1;
+}
+
+/* --- Styling Halaman Undangan Utama (undangan.html) --- */
+.undangan-main-body {
+    color: var(--text-color-dark);
+    background-color: #eee;
+    background-image: url('bg3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+.undangan-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+.hidden-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+}
+
+.hidden-content.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Ornamen Daun dan Animasi */
+@keyframes leafAnimationLeft {
+    0% { transform: translate(-10%, 10%); }
+    50% { transform: translate(-12%, 8%); }
+    100% { transform: translate(-10%, 10%); }
+}
+@keyframes leafAnimationRight {
+    0% { transform: translate(10%, -2%); }
+    50% { transform: translate(12%, -4%); }
+    100% { transform: translate(10%, -2%); }
+}
+.leaf-ornament-left, .leaf-ornament-right {
+    position: fixed;
+    z-index: 1;
+    height: auto;
+    opacity: 0.7;
+    width: 550px; /* Lebar default untuk desktop */
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    /* Tambahkan ini untuk mencegah interaksi mouse */
+    pointer-events: none;
+}
+.leaf-ornament-left {
+    bottom: 0;
+    left: 0;
+    animation: leafAnimationLeft 8s ease-in-out infinite alternate;
+}
+.leaf-ornament-right {
+    top: 0;
+    right: 0;
+    animation: leafAnimationRight 8s ease-in-out infinite alternate;
+}
+
+
+/* Bagian Undangan Utama */
+.main-invitation-section {
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--text-color-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+.main-invitation-title {
+    font-family: var(--font-great-vibes);
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin: 0 0 10px;
+    position: relative;
+    z-index: 2;
+}
+.main-couple-illustration {
+    width: 30%;
+    max-width: 160px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+.main-assalamualaikum-text, .main-intro-text {
+    font-family: var(--font-family-main);
+    line-height: 1.5;
+    font-style: italic;
+    color: #555;
+    position: relative;
+    z-index: 2;
+}
+.main-assalamualaikum-text {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+.main-intro-text {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+.main-names-and-accents {
+    position: relative;
+    margin-bottom: 15px;
+    z-index: 2;
+}
+.main-couple-names {
+    font-family: var(--font-dancing-script);
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.full-names-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+.main-afriani-utari, .main-muhammad-yusuf {
+    font-family: var(--font-family-elegant);
+    font-size: 0.9em;
+    color: var(--text-color-dark);
+    display: block;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+.main-event-details {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: var(--font-family-main);
+    font-size: 0.8em;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 550px;
+}
+.main-resepsi, .main-akad-nikah {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 150px;
+}
+.main-resepsi:hover, .main-akad-nikah:hover {
+    transform: translateY(-5px);
+}
+.main-separator-line {
+    width: 1px;
+    background-color: var(--primary-color);
+    height: 80px;
+    align-self: center;
+}
+.main-event-type {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+.main-event-date, .main-event-time {
+    margin: 0;
+    color: #555;
+}
+
+/* Countdown Timer */
+.countdown-section {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.countdown-container {
+    background-color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 40px 20px;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.countdown-title {
+    font-family: var(--font-great-vibes);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    padding: 20px 10px;
+    border-radius: 10px;
+    min-width: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+.countdown-box:hover {
+    transform: translateY(-5px);
+}
+.countdown-number {
+    font-family: var(--font-dancing-script);
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.countdown-label {
+    font-family: var(--font-family-main);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Tombol Tambahkan ke Kalender */
+.add-to-calendar-btn {
+    margin-top: 30px;
+    font-family: var(--font-family-elegant);
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 12px 25px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-calendar-btn:hover {
+    background-color: #002d5a;
+    transform: translateY(-2px);
+}
+
+/* Bagian Ayat/Doa */
+#doa-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.doa-title {
+    font-family: var(--font-great-vibes);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.doa-arabic-wrapper {
+    margin-bottom: 10px;
+}
+.doa-arabic-text {
+    font-family: 'Amiri', serif;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: black;
+    line-height: 1.5;
+}
+.doa-transliteration {
+    font-family: var(--font-family-main);
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+}
+.doa-hadits-source {
+    font-family: var(--font-family-monospace);
+    font-size: 0.7em;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.doa-translation-box {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+    margin: 0 20px;
+    text-align: left;
+}
+.doa-translation-text {
+    font-family: var(--font-family-main);
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    font-style: italic;
+}
+
+/* Bagian Peta */
+/* Bagian Peta */
+#maps-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column; /* Menumpuk elemen secara vertikal */
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.maps-box {
+    /* Menggunakan gaya yang sama dengan card-section-container */
+    max-width: 600px;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.maps-title {
+    font-family: var(--font-great-vibes);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.maps-description {
+    font-family: var(--font-family-main);
+    font-size: 1em;
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.map-embed-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.map-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* Bagian Rekening */
+#rekening-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column; /* Mengubah flex-direction untuk menumpuk elemen secara vertikal */
+    justify-content: center;
+    align-items: center; /* Memastikan konten di tengah secara horizontal */
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+.rekening-title {
+    font-family: var(--font-great-vibes);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.rekening-description {
+    font-family: var(--font-family-main);
+    font-size: 1em;
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.atm-card {
+    background: linear-gradient(to right top, #2e3137, #4b515d);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 25px auto; /* Menggunakan margin auto untuk sentralisasi horizontal */
+    font-family: var(--font-family-monospace);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.atm-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.bank-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.chip-icon {
+    width: 40px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+.atm-card-number {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.account-number {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 0;
+}
+.copy-button-wrapper {
+    position: relative;
+}
+.copy-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+}
+.copy-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.atm-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+}
+.cash-gift-info {
+    font-family: var(--font-family-main);
+    font-size: 0.9em;
+    text-align: center;
+    color: var(--text-color-dark);
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+/* Bagian Kehadiran & Pesan (RSVP) */
+#rsvp-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column; /* Menumpuk elemen secara vertikal */
+    justify-content: center;
+    align-items: center; /* Memusatkan semua konten secara horizontal */
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.rsvp-title {
+    font-family: var(--font-great-vibes);
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.rsvp-description {
+    font-family: var(--font-family-main);
+    font-size: 1em;
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.rsvp-form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto; /* Memastikan form terpusat di dalam container */
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-label {
+    font-family: var(--font-family-main);
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-family-main);
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+.form-textarea {
+    resize: vertical;
+}
+.submit-btn {
+    font-family: var(--font-family-elegant);
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 12px 25px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: #002d5a;
+    transform: translateY(-2px);
+}
+.divider {
+    width: 80%;
+    margin: 40px 0;
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+}
+/* === WRAPPER UTAMA KOMENTAR === */
+.comment-section {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.comment-title {
+  font-family: var(--font-great-vibes);
+  font-size: 1.6em;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* === LIST KOMENTAR === */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+/* === SETIAP KOMENTAR === */
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  animation: fadeInUp 0.5s ease;
+}
+
+/* === NAMA TAMU === */
+.comment-author {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 5px;
+  padding-left: 8px;
+  text-align: left;
+  max-width: 90%;
+}
+
+/* === UCAPAN TAMU === */
+.comment-item {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 20px 20px 20px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  width: fit-content;
+  max-width: 90%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.comment-message {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* === ANIMASI MASUK === */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+#mainUndanganWrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+}
+
+#mainUndanganWrapper.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Animasi Bunga dan Scroll */
+/* --- OVERLAY UTAMA --- */
+.flower-animation-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('bg3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+  overflow: hidden;
+}
+
+.flower-animation-overlay.show {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- GRID BUNGA --- */
+.flower-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- BUNGA DASAR --- */
+.animated-flower {
+  position: absolute;
+  width: auto;
+  height: 600px;
+  opacity: 0;
+  animation-name: none;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+
+/* --- ANIMASI BUNGA SUDUT --- */
+@keyframes cornerFlowerAnimation {
+  0%   { opacity: 0; transform: scale(1) translate(0, 0); }
+  10%  { opacity: 1; transform: scale(1.02) translate(10px, 0); }
+  20%  { transform: scale(0.98) translate(-10px, 0); }
+  30%  { transform: scale(1) translate(0, 0); }
+  50%  { transform: scale(1.02) translate(10px, 0); }
+  100% { opacity: 0; transform: scale(0.5) translate(var(--end-corner-x), var(--end-corner-y)); }
+}
+
+.animated-flower.animate.corner-flower {
+  animation-name: cornerFlowerAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+/* --- POSISI SUDUT --- */
+.corner-top-left    { top: -200px; left: -200px; --end-corner-x: -300px; --end-corner-y: -300px; }
+.corner-top-right   { top: -200px; right: -200px; left: unset; --end-corner-x: 300px; --end-corner-y: -300px; }
+.corner-bottom-left { bottom: -100px; left: -200px; top: unset; --end-corner-x: -300px; --end-corner-y: 300px; }
+.corner-bottom-right{ bottom: -100px; right: -200px; left: unset; top: unset; --end-corner-x: 300px; --end-corner-y: 300px; }
+
+/* --- ANIMASI BUNGA TENGAH --- */
+@keyframes centralFlowerAnimation {
+  0%   { opacity: 0; transform: scale(0.2) rotate(0deg) translate(var(--start-x), var(--start-y)); }
+  15%  { opacity: 1; transform: scale(1.8) rotate(90deg) translate(calc(var(--start-x)*0.8 + var(--end-x)*0.2), calc(var(--start-y)*0.8 + var(--end-y)*0.2)); }
+  85%  { transform: scale(2.8) rotate(270deg) translate(calc(var(--start-x)*0.2 + var(--end-x)*0.8), calc(var(--start-y)*0.2 + var(--end-y)*0.8)); }
+  100% { opacity: 0; transform: scale(3.8) rotate(360deg) translate(var(--end-x), var(--end-y)); }
+}
+
+.animated-flower.animate.central-flower {
+  animation-name: centralFlowerAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+/* --- POSISI TENGAH --- */
+.central-1 {
+  --start-x: -80vw;
+  --start-y: 20vh;
+  --end-x: 180vw;
+  --end-y: 80vh;
+  animation-delay: 0.05s;
+}
+
+.central-2 {
+  --start-x: 80vw;
+  --start-y: 120vh;
+  --end-x: -80vw;
+  --end-y: -20vh;
+  animation-delay: 0.15s;
+}/* === SCROLL REVEAL ANIMASI DASAR === */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === VARIASI ARAH MASUK === */
+.reveal-on-scroll.from-left {
+  transform: translateX(-50px);
+}
+.reveal-on-scroll.from-left.active {
+  transform: translateX(0);
+}
+
+.reveal-on-scroll.from-right {
+  transform: translateX(50px);
+}
+.reveal-on-scroll.from-right.active {
+  transform: translateX(0);
+}
+
+/* === VARIASI SCALE === */
+.reveal-on-scroll.scale-in {
+  transform: scale(0.9);
+}
+.reveal-on-scroll.scale-in.active {
+  transform: scale(1);
+}
+
+/* === VARIASI ROTASI (Opsional) === */
+.reveal-on-scroll.rotate-in {
+  transform: rotate(-5deg);
+}
+.reveal-on-scroll.rotate-in.active {
+  transform: rotate(0deg);
+}
+
+/* === TRANSISI ORNAMEN (Contoh: daun) === */
+.leaf-ornament-left,
+.leaf-ornament-right {
+  transition: transform 1s ease-out;
+}
+
+/* === SNAP SECTION === */
+.section-fullscreen {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* --- Responsif untuk Mobile (DIKONSOLIDASI) --- */
+/* --- Responsif untuk Mobile (DIKONSOLIDASI) --- */
+@media (max-width: 600px) {
+    /* Halaman Pembuka */
+    .opening-couple-name { font-size: 2em; }
+    .opening-guest-name { font-size: 1.5em; }
+    .open-button { font-size: 0.8em; padding: 10px 20px; }
+    .header-left { font-size: 0.7em; }
+    .logo-text { font-size: 0.9em; }
+    .logo-accent-img { width: 30px; height: auto; }
+    .initials { font-size: 1em; }
+    .responsive-box {
+    width: 88%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+    
+    /* Ornamen Daun (Diperbesar) */
+    @keyframes leafAnimationLeftMobile {
+        0% { transform: translate(-15%, 5%); }
+        50% { transform: translate(-18%, 2%); }
+        100% { transform: translate(-15%, 5%); }
+    }
+    @keyframes leafAnimationRightMobile {
+        0% { transform: translate(15%, -5%); }
+        50% { transform: translate(18%, -8%); }
+        100% { transform: translate(15%, -5%); }
+    }
+    .leaf-ornament-left, .leaf-ornament-right {
+        width: 320px; /* Diperbesar sedikit dari 250px */
+        max-width: 60vw; /* Diperbesar dari 50vw */
+        font-size: 0;
+        line-height: 0;
+        color: transparent;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        will-change: transform;
+    }
+    .leaf-ornament-left {
+        transform: translate(-15%, 5%);
+        animation: leafAnimationLeftMobile 8s ease-in-out infinite alternate;
+    }
+    .leaf-ornament-right {
+        transform: translate(15%, -5%);
+        animation: leafAnimationRightMobile 8s ease-in-out infinite alternate;
+    }
+
+    /* Ukuran dan Padding Umum */
+    .countdown-container,
+    .atm-card,
+    .card-section-container,
+    .maps-box,
+    .rsvp-form,
+    .rekening-container { /* Tambahkan .rekening-container untuk memastikan konsistensi */
+        width: 88%; /* Melebarkan form dari 90% ke 95% */
+        padding: 20px 15px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    /* Undangan Utama */
+    .undangan-content { padding-top: 0; padding-bottom: 0; }
+    .main-invitation-section { padding: 10px 15px; min-height: 100vh; }
+    .main-invitation-title { font-size: 2em; margin-top: 15px; }
+    .main-couple-illustration { width: 35%; max-width: 120px; }
+    .main-assalamualaikum-text { font-size: 0.65em; line-height: 1.2; margin-right: 20px; margin-left: 20px; }
+    .main-couple-names { font-size: 2em; margin-top: 0; margin-bottom: 5px; }
+    .full-names-wrapper { gap: 10px; margin-top: 0; }
+    .main-afriani-utari, .main-muhammad-yusuf { font-size: 0.7em; }
+    .main-event-details {
+        flex-direction: row;
+        gap: 10px;
+        font-size: 10px;
+        max-width: 100%;
+    }
+    .main-resepsi, .main-akad-nikah { padding: 15px 10px; min-height: 140px; }
+    .main-separator-line { display: none; }
+
+    /* Countdown Timer */
+    .countdown-container { max-width: 300px; padding: 20px 5px; }
+    .countdown-title { font-size: 1.3em; margin-bottom: 15px; padding: 0 5px; box-sizing: border-box; }
+    .countdown-timer { gap: 3px; width: auto; flex-grow: 0; max-width: 100%; padding: 0 2px; box-sizing: border-box; }
+    .countdown-box { min-width: 65px; padding: 8px 3px; }
+    .countdown-number { font-size: 1.5em; }
+    .countdown-label { font-size: 0.45em; }
+    .add-to-calendar-btn { font-size: 0.7em; padding: 10px 15px; }
+    
+    /* Ayat/Doa */
+    .doa-text-container { max-width: 350px; padding: 20px 5px; border-radius: 10px; }
+    .doa-title { font-size: 1.3em; margin-bottom: 10px; padding: 0 5px; box-sizing: border-box; }
+    .doa-arabic-text { font-size: 1.3em; }
+    .doa-transliteration { font-size: 0.6em; padding-left: 20px; padding-right: 2px; }
+    .doa-hadits-source { font-size: 0.6em; margin-bottom: 10px; }
+    .doa-translation-box { margin: 0 5px; padding-left: 8px; }
+    .doa-translation-text { font-size: 0.7em; }
+    
+    /* Peta */
+    .maps-container { max-width: 320px; padding: 20px 10px; border-radius: 10px; }
+    .maps-title { font-size: 1.8em; margin-bottom: 15px; }
+    .maps-description { font-size: 0.8em; margin-bottom: 20px; }
+    .map-embed-wrapper { padding-bottom: 75%; }
+    .maps-direction-btn { font-size: 0.7em; padding: 10px 20px; }
+    
+    /* Rekening */
+    #rekening-section { padding: 5px 0; }
+    .rekening-container { max-width: 500px; padding: 10px; }
+    .rekening-title { font-size: 1.4em; margin-bottom: 8px; }
+    .rekening-description { font-size: 0.7em; margin-bottom: 10px; }
+    .atm-card { width: 100%; max-width: 260px; padding: 8px; margin-bottom: 10px; }
+    .bank-name { font-size: 0.7em; }
+    .chip-icon { width: 18px; height: 12px; }
+    .atm-card-number { margin-bottom: 12px; }
+    .account-number { 
+        font-size: 0.8em; 
+        letter-spacing: 1px;
+        color: white;
+    }
+    .copy-btn { font-size: 0.5em; padding: 2px 5px; }
+    .atm-card-footer { font-size: 0.45em; }
+    .cash-gift-info { font-size: 0.6em; margin-top: 5px; line-height: 1.3; }
+    
+    /* RSVP */
+    .rsvp-container { max-width: 500px; padding: 15px 10px; }
+    .rsvp-title { font-size: 1.5em; margin-bottom: 10px; }
+    .rsvp-description { font-size: 0.75em; margin-bottom: 15px; }
+    .rsvp-form { gap: 10px; }
+    .form-label { 
+        font-size: 0.85em; 
+        margin-bottom: 2px; 
+    }
+    
+    /* OPSI 1: Solusi Terbaik (Mencegah Zoom di iPhone) */
+    .form-input, .form-textarea, .form-select { 
+        font-size: 12px;
+        padding: 8px;
+        color: black;
+    }
+    
+
+    .submit-btn { font-size: 0.7em; padding: 8px 16px; }
+    .divider { margin: 20px 0; }
+     .comment-title {
+    font-size: 1.4em;
+    margin-bottom: 0.8rem;
+  }
+
+  .comment-list {
+    max-height: 180px;
+    gap: 8px;
+    padding-right: 5px;
+  }
+
+  .comment-author {
+    font-size: 0.7em;
+    margin-bottom: 3px;
+  }
+
+  .comment-item {
+    padding: 8px 12px;
+    border-radius: 12px 12px 12px 4px;
+  }
+
+  .comment-message {
+    font-size: 0.75em;
+    line-height: 1.3;
+  }
+    
+    .animated-flower {
+    height: unset;
+    width: auto;
+  }
+
+  .corner-top-left    { height: 450px; top: -110px; left: -90px; animation-duration: 1.8s; --end-corner-x: -150px; --end-corner-y: -150px; }
+  .corner-top-right   { height: 450px; top: -110px; right: -90px; left: unset; animation-duration: 1.8s; --end-corner-x: 150px; --end-corner-y: -150px; }
+  .corner-bottom-left { height: 450px; bottom: -110px; left: -90px; top: unset; animation-duration: 1.8s; --end-corner-x: -150px; --end-corner-y: 150px; }
+  .corner-bottom-right{ height: 450px; bottom: -110px; right: -90px; left: unset; top: unset; animation-duration: 1.8s; --end-corner-x: 150px; --end-corner-y: 150px; }
+
+  .animated-flower.central-flower {
+    display: none; /* Sembunyikan bunga tengah di mobile */
+  }
+}
+/* Music Toggle Button */
+.music-toggle-button {
+    position: fixed; /* Membuat tombol tetap di tempat, bahkan saat di-scroll */
+    bottom: 20px;    /* Jarak dari bawah layar */
+    right: 20px;     /* Jarak dari kanan layar */
+    z-index: 1000;   /* Memastikan tombol selalu berada di atas elemen lain */
+    width: 50px;     /* Lebar tombol */
+    height: 50px;    /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol menjadi bulat */
+    background-color: rgba(20, 19, 19, 0.7); /* Warna latar belakang semi-transparan */
+    color: #b4c0f7;    /* Warna ikon */
+    border: 2px solid #666ee2; /* Garis tepi tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.music-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1); /* Efek membesar saat disentuh mouse */
+}
+
+/* Styles for the Font Awesome icon inside the button */
+.music-toggle-button i {
+    font-size: 20px;
+}
+
+
+
+/* --- Responsif untuk Desktop/Tablet (Lainnya) --- */
+@media (min-width: 768px) {
+    .main-couple-names { font-size: 3em; margin-top: 0; }
+}

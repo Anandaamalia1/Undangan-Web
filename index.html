@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Undangan Pernikahan [Nama Pria] & [Nama Wanita]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body class="opening-body">
+    <div class="opening-header">
+        <p class="header-left">undangan pernikahan</p>
+        <div class="logo">
+            <img src="logo.png" alt="Aksen Logo" class="logo-accent-img">
+            <span class="logo-text">married</span>
+        </div>
+    </div>
+
+    <div class="opening-main-content">
+        <p class="opening-couple-name">Dinda & Agung</p>
+        <p class="opening-invitation">Kepada Yth:</p>
+        <h1 class="opening-guest-name" id="guestName">[Nama Tamu]</h1>
+        <button class="open-button" id="openInvitationButton" onclick="openUndangan()" style="border-radius: 25px;">Buka Undangan</button>
+    </div>
+
+    <div class="opening-footer">
+        <p class="initials">D n A</p>
+    </div>
+
+   <script>
+        function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    window.onload = function() {
+        const guestName = getQueryParam('to');
+        const partnerName = getQueryParam('partner');
+        let displayedName = "";
+
+        if (guestName) {
+            displayedName = decodeURIComponent(guestName.replace(/\+/g, ' '));
+        }
+
+        if (partnerName) {
+            const decodedPartnerName = decodeURIComponent(partnerName.replace(/\+/g, ' '));
+            if (displayedName) {
+                displayedName += ` & ${decodedPartnerName}`;
+            } else {
+                displayedName = decodedPartnerName;
+            }
+        }
+
+        if (displayedName) {
+            document.getElementById('guestName').textContent = displayedName;
+        } else {
+            document.getElementById('guestName').textContent = "Tamu Terhormat";
+        }
+    };
+
+    function openUndangan() {
+        const guestParam = getQueryParam('to');
+        const partnerParam = getQueryParam('partner');
+        let redirectUrl = 'undangan.html';
+
+        if (guestParam || partnerParam) {
+            redirectUrl += '?';
+            if (guestParam) {
+                redirectUrl += `to=${guestParam}`;
+            }
+            if (partnerParam) {
+                redirectUrl += `&partner=${partnerParam}`;
+            }
+        }
+        
+        window.location.href = redirectUrl;
+    }
+    </script>
+</body>
+</html>

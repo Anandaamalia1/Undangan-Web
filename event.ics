@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//My Wedding Invitation//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:byna0813
+SUMMARY:Walimatul Ursy Dinda & Agung
+DTSTART:20251005T100000
+DTEND:20251005T203000
+LOCATION:Wisma Yayasan Perjalanan Haji Indonesia PHI, Jl. Binjai No.270, Sei Sikambing C. II, Kec. Medan Helvetia, Kota Medan, Sumatera Utara 20123
+DESCRIPTION:Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara resepsi pernikahan kami. Mohon berikan doa restu.
+URL:https://anandaamalia1.github.io/undangan-digital/
+END:VEVENT
+END:VCALENDAR

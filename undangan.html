@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Undangan Pernikahan Dinda & Agung</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&family=Roboto+Mono&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="undangan-main-body">
+
+  <!-- 🌸 Animasi Bunga -->
+  <div class="flower-animation-overlay" id="flowerAnimationOverlay">
+    <div class="flower-grid">
+      <img src="katas.png" class="animated-flower corner-flower corner-top-left">
+      <img src="kantas.png" class="animated-flower corner-flower corner-top-right">
+      <img src="kibawah.png" class="animated-flower corner-flower corner-bottom-left">
+      <img src="kbawah.png" class="animated-flower corner-flower corner-bottom-right">
+      <img src="bungaT1.png" class="animated-flower central-flower central-1">
+      <img src="bungaT2.png" class="animated-flower central-flower central-2">
+    </div>
+  </div>
+
+  <!-- 🎵 Musik -->
+  <audio id="myAudio" src="aset/lagu.mp3" loop autoplay></audio>
+
+  <!-- 📜 Konten Undangan (disembunyikan dulu) -->
+  <div id="mainUndanganWrapper" class="hidden-content">
+    <img src="kiri.png" alt="Ornamen Daun Kiri" class="leaf-ornament-left reveal-on-scroll from-left">
+    <img src="kanan.png" alt="Ornamen Daun Kanan" class="leaf-ornament-right reveal-on-scroll from-right">
+
+    <main class="undangan-content">
+      <!-- Walimatul Ursy -->
+      <section class="main-invitation-section reveal-on-scroll">
+        <h1 class="main-invitation-title">Walimatul Ursy</h1>
+        <img src="cp.png" alt="Dinda & Agung" class="main-couple-illustration reveal-on-scroll scale-in">
+        <p class="main-assalamualaikum-text reveal-on-scroll atas">
+          Assalamualaikum Warahmatullahi Wabarakatuh<br>
+          Dengan penuh rasa syukur dan sukacita yang mendalam,
+          serta memohon kehadirat Allah SWT agar senantiasa melimpahkan berkah-Nya,
+          kami mengundang Bapak/Ibu/Saudara/i sekalian dengan segala hormat
+          untuk dapat hadir, memberikan doa restu, serta menjadi saksi kebahagiaan kami
+          dalam acara walimatul 'ursy atas pernikahan putra-putri tercinta kami:
+        </p>
+        <div class="main-names-and-accents reveal-on-scroll">
+          <h2 class="main-couple-names">Dinda & Agung</h2>
+        </div>
+      </section>
+
+      <!-- Jadwal Acara -->
+      <section class="main-invitation-section reveal-on-scroll" id="jadwal-acara">
+        <h1 class="main-invitation-title">Jadwal Acara</h1>
+        <p class="main-assalamualaikum-text reveal-on-scroll">
+          Dengan segala kerendahan hati, kami menginformasikan<br>
+          rangkaian acara pernikahan kami yang akan diselenggarakan pada:
+        </p>
+        <div class="main-event-details reveal-on-scroll">
+          <div class="main-resepsi reveal-on-scroll from-left">
+            <p class="main-event-type">RESEPSI PERNIKAHAN</p>
+            <p class="main-event-date">MINGGU, 05 OKTOBER 2025</p>
+            <p class="main-event-time">10:00 WIB - 20:30 WIB</p>
+          </div>
+          <div class="main-separator-line reveal-on-scroll"></div>
+          <div class="main-akad-nikah reveal-on-scroll from-right">
+            <p class="main-event-type">AKAD NIKAH</p>
+            <p class="main-event-date">JUM'AT, 04 OKTOBER 2025</p>
+            <p class="main-event-time">05:30 WIB - 08:00 WIB</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Countdown -->
+      <section id="countdown" class="main-invitation-section countdown-section reveal-on-scroll">
+        <div class="countdown-container reveal-on-scroll">
+          <h2 class="countdown-title">Menghitung Hari Bahagia</h2>
+          <div id="countdown-timer" class="countdown-timer reveal-on-scroll">
+            <div class="countdown-box reveal-on-scroll from-left">
+              <span id="days" class="countdown-number">00</span>
+              <span class="countdown-label">Hari</span>
+            </div>
+            <div class="countdown-box reveal-on-scroll">
+              <span id="hours" class="countdown-number">00</span>
+              <span class="countdown-label">Jam</span>
+            </div>
+            <div class="countdown-box reveal-on-scroll">
+              <span id="minutes" class="countdown-number">00</span>
+              <span class="countdown-label">Menit</span>
+            </div>
+            <div class="countdown-box reveal-on-scroll from-right">
+              <span id="seconds" class="countdown-number">00</span>
+              <span class="countdown-label">Detik</span>
+            </div>
+          </div>
+          <a href="#" id="add-to-calendar-btn" class="add-to-calendar-btn reveal-on-scroll" onclick="openCalendar(event)">
+            Tambahkan ke Kalender
+          </a>
+        </div>
+      </section>
+
+      <!-- Doa -->
+      <section id="doa-section" class="main-invitation-section reveal-on-scroll">
+        <div class="section-content-wrapper reveal-on-scroll">
+          <div class="doa-text-container reveal-on-scroll">
+            <h2 class="doa-title">Doa Untuk Pengantin</h2>
+            <div class="doa-arabic-wrapper reveal-on-scroll">
+              <p class="doa-arabic-text">بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+              <p class="doa-transliteration">BAAROKALLAAHU LAKA WA BAAROKA 'ALAIKA WA JAMA'A BAINAKUMAA FII KHOIR</p>
+            </div>
+            <div class="doa-hadits-source reveal-on-scroll">
+              <p>(HR. Abu Dawud, Ibnu Majah dan At-Tirmidzi)</p>
+            </div>
+            <div class="doa-translation-box reveal-on-scroll">
+              <p class="doa-translation-text">"Semoga Allah memberkahi kalian berdua dan mengumpulkan kalian berdua dalam kebaikan."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Maps -->
+      <section id="maps-section" class="main-invitation-section reveal-on-scroll">
+        <div class="card-section-container">
+          <h2 class="maps-title">Lokasi Acara</h2>
+          <p class="maps-description">Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami. Berikut adalah lokasi acara:</p>
+          <div class="map-embed-wrapper reveal-on-scroll">
+            <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Wisma+Yayasan+Perjalanan+Haji+Indonesia+PHI,+Jl.+Binjai+No.270,+Medan" class="btn-primary maps-direction-btn" target="_blank">
+            Buka di Google Maps
+          </a>
+        </div>
+      </section>
+
+            <section id="rekening-section" class="main-invitation-section reveal-on-scroll">
+                <div class="rekening-container reveal-on-scroll">
+                    <h2 class="rekening-title">Gift and Cash</h2>
+                    <p class="rekening-description">
+                        Kehadiran Anda di hari bahagia kami sudah lebih dari cukup. Namun, jika Anda ingin memberikan hadiah, kami juga menerima kado digital melalui rekening berikut.
+                    </p>
+
+                    <div class="atm-card reveal-on-scroll from-left">
+                        <div class="atm-card-header">
+                            <span class="bank-name">CIMB Niaga Syariah</span>
+                            <span class="chip-icon"></span>
+                        </div>
+                        <div class="atm-card-number">
+                            <p class="account-number">763955051400</p>
+                            <div class="copy-button-wrapper">
+                                <button class="copy-btn" onclick="copyToClipboard('763955051400')">
+                                    <i class="fas fa-copy"></i>
+                                    Salin
+                                </button>
+                            </div>
+                        </div>
+                        <div class="atm-card-footer">
+                            <p class="account-name">Dinda Afriani Utari</p>
+                            <p class="card-validity">Valid Thru 2029</p>
+                        </div>
+                    </div>
+
+                    <div class="atm-card reveal-on-scroll from-right">
+                        <div class="atm-card-header">
+                            <span class="bank-name">Bank Syariah Indonesia</span>
+                            <span class="chip-icon"></span>
+                        </div>
+                        <div class="atm-card-number">
+                            <p class="account-number">7283236611</p>
+                            <div class="copy-button-wrapper">
+                                <button class="copy-btn" onclick="copyToClipboard('7283236611')">
+                                    <i class="fas fa-copy"></i>
+                                    Salin
+                                </button>
+                            </div>
+                        </div>
+                        <div class="atm-card-footer">
+                            <p class="account-name">Dinda Afriani Utari</p>
+                            <p class="card-validity">Valid Thru 2029</p>
+                        </div>
+                    </div>
+
+                    <p class="cash-gift-info reveal-on-scroll">
+                        Atau kirimkan kado melalui alamat di bawah ini.
+                        <br><br>
+                        Jl. Pungguk No 41 D, Sei Sikambing B Medan Sunggal 20122
+                    </p>
+                </div>
+            </section>
+
+            <section id="rsvp-section" class="main-invitation-section reveal-on-scroll">
+  <div class="rsvp-container reveal-on-scroll">
+    <h2 class="rsvp-title">Konfirmasi Kehadiran</h2>
+    <p class="rsvp-description">
+      Mohon konfirmasi kehadiran Anda untuk membantu kami dalam persiapan acara ini.
+    </p>
+
+    <!-- FORM RSVP -->
+    <form id="rsvp-form" class="rsvp-form reveal-on-scroll">
+      <div class="form-group reveal-on-scroll">
+        <label for="name" class="form-label">Nama Anda</label>
+        <input type="text" id="name" name="name" class="form-input" placeholder="Tulis nama Anda" required>
+      </div>
+
+      <div class="form-group reveal-on-scroll">
+        <label for="attendance" class="form-label">Konfirmasi Kehadiran</label>
+        <select id="attendance" name="attendance" class="form-select" required>
+          <option value="" disabled selected>Pilih kehadiran</option>
+          <option value="Hadir">Hadir</option>
+          <option value="Tidak Hadir">Tidak Hadir</option>
+        </select>
+      </div>
+
+      <div class="form-group reveal-on-scroll">
+        <label for="message" class="form-label">Pesan untuk Pengantin</label>
+        <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tulis pesan terbaik Anda untuk kami..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn reveal-on-scroll">Kirim Pesan</button>
+    </form>
+
+    <!-- PEMBATAS -->
+    <hr class="divider reveal-on-scroll" style="margin-top: 40px;">
+
+   <!-- KOMENTAR DARI FILE JSON -->
+<div class="comment-section reveal-on-scroll">
+  <h3 class="comment-title">Komentar dari File JSON</h3>
+  <p class="comment-subtitle">Komentar yang dimuat dari arsip JSON:</p>
+  <div id="json-comment-list" class="comment-list reveal-on-scroll">
+    <!-- Komentar dari JSON akan ditambahkan di sini oleh JavaScript -->
+  </div>
+</div>
+
+  </div>
+</section>
+
+        </main>
+
+        <div class="undangan-footer">
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
